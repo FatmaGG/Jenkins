@@ -25,7 +25,7 @@ pipeline {
     }  
    stage("docker build"){
       steps { 
-       sh 'docker build -t fatmagamal/jenkins-demo:latest .'
+       sh 'docker build . -t fatmagamal/jenkins-demo:latest '
       }
     }
   }
