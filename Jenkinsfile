@@ -36,13 +36,18 @@ pipeline {
        sh 'docker build -t fatmagamal/jenkins-demo:latest .'
       }
     }
-    stage ("LoginANDPushImage"){
-   steps {
-     sh 'echo username = ${DEOCKERHUB_CREDENTIALS_USR}'
-    sh 'echo passwrod = ${DEOCKERHUB_CREDENTIALS_PSW}'  
-     sh 'docker login -u ${DEOCKERHUB_CREDENTIALS_USR} -p ${DEOCKERHUB_CREDENTIALS_PSW} '  
-     sh 'docker push fatmagamal/jenkins-demo:latest' 
-     }
-   }
+    stage ("login") {
+      steps{
+        sh 'echo usernamre = ${CREDENTIALS_USR}'
+        sh 'echo password = ${CREDENTIALS_PSW}'
+        sh 'docker login -u ${CREDENTIALS_USR} -p ${CREDENTIALS_PSW}'
+      }
+    }
+    stage ("Push to dockerHub"){
+      steps{
+        sh 'docker push fatmagamal/jenkins-demo:latest'
+      }
+    }
   }
-}
+  }
+
