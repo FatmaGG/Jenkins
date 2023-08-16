@@ -23,10 +23,10 @@ pipeline {
         sh 'npm run build'
       }
     }  
-   stage("docker build") {
-  steps {
-    sh 'docker build -t fatmagamal/jenkins-demo:latest -f Dockerfile .'
-  }
-}
+   stage("docker build"){
+      steps { 
+       sh 'docker build -t fatmagamal/jenkins-demo:latest -f Dockerfile .'
+      }
+    }
   }
 }
