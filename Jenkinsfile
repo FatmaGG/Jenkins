@@ -1,7 +1,7 @@
 pipeline {
   agent any 
-  docker {
-      image 'node:lts-buster-slim'
+ environment{
+      CREDENTIALS = credentials('dockerhup')
     }
   stages {
     stage  ("Install dependeincies") {
