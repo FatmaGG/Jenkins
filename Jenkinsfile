@@ -40,7 +40,7 @@ pipeline {
       steps{
       sh 'echo username = ${CREDENTIALS_USR}'
      sh 'echo password = ${CREDENTIALS_PSW}'  
-    sh 'docker login -u ${CREDENTIALS_USR} --password-stdin ${CREDENTIALS_PSW}'  
+    sh 'winpty docker login -u ${CREDENTIALS_USR} --password-stdin ${CREDENTIALS_PSW}'  
       }
     }
     stage ("Push to dockerHub"){
