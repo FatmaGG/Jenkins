@@ -41,7 +41,7 @@ pipeline {
      sh 'echo username = ${DEOCKERHUB_CREDENTIALS_USR}'
     sh 'echo passwrod = ${DEOCKERHUB_CREDENTIALS_PSW}'  
      sh 'docker login -u ${DEOCKERHUB_CREDENTIALS_USR} -p ${DEOCKERHUB_CREDENTIALS_PSW} '  
-     sh 'docker push fatmagamal/jenkins-demo:${BUILD_NUMBER}' 
+     sh 'docker push fatmagamal/jenkins-demo:latest' 
      }
    }
   }
